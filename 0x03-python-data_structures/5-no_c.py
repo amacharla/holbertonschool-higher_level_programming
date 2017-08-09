@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    for index, char in enumerate(my_string[:]):
-        if char == 'c' or char == 'C':
-            new_string = my_string[:index] + my_string[index + 1:]
-    return (new_string)
+    new_list = []
+    for char in my_string:
+        if char not in "cC":  # checks if char is c or C
+            new_list.append(char)  # stores char in list
+# turn list into mutable type by getting rid of ", " makes it not a list
+    return ("".join(new_list))
