@@ -5,4 +5,4 @@ def divisible_by_2(my_list=[]):
         for i in new_list:
             new_list[i] = True if new_list[i] % 2 == 0 else False
         return (new_list)
-    return (None)
+    return (my_list)
