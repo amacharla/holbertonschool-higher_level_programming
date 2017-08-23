@@ -2,23 +2,13 @@
 class Square:
     def __init__(self, size=0, position=(0, 0)):
         """
+        Calls respective setter funciton
         Args:
             size: must be int and greater than 0
-        Raises:
-            TypeError: if size is not int
-            ValueError: size is less than 0
+            position: must be tuple and args of it must be int
         """
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-
-        if type(position[0]) != int and type(position[1]) != int:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
+        self.size = size
+        self.position = position
 # SIZE------------------------------------------------------------------------
 
     @property
@@ -60,7 +50,8 @@ class Square:
         Raises:
             TypeError: position must be a tuple of 2 positive integers
         """
-        if type(position.args) != int:
+        if type(position) != tuple or len(position) != 2 \
+                or type(position[0]) != int or type(position[1]) != int:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = position
