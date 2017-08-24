@@ -38,9 +38,11 @@ class SinglyLinkedList:
            self.__head = Node(value, self.__head)
         else:
             __current = self.__head
-            while __current.next_node != None and value < __current.next_node.data:
+            while __current.next_node != None:
+                if value < __current.next_node.data:
+                    break
                 __current = __current.next_node
-            __current.next_node = Node(value)
+            __current.next_node = Node(value, __current.next_node)
 
     def __str__(self):
         __current = self.__head
