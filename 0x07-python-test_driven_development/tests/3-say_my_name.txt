@@ -1,0 +1,159 @@
+The ``3-say_my_name(first_name, last_name)`` module
+===================================================
+
+Using ``Print My name is first_name last_name``
+-----------------------------------------------
+
+To run these tests, first import ``say_my_name`` from the ``3-say_my_name`` module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+"""Test A: Working scenarios"""
+    >>> say_my_name("Jane123!", "Smith")
+    My name is Jane123! Smith
+
+    >>> say_my_name(“”, “Mouse”)
+    My name is  Mouse
+
+    >>> say_my_name(“Mickey”, “”)
+    My name is Mickey 
+
+"""Test B: Check wrong number of arguments (zero arg)"""
+>>> say_my_name()
+
+"""Test C: Check wrong number of arguments (one arg)"""
+>>> say_my_name("")
+>>> say_my_name(None)
+>>> say_my_name("Bubbles")
+>>> say_my_name(,“Bubbles”)
+>>> say_my_name(‘\n’)
+>>> say_my_name(,‘\n’)
+
+"""Test D: Check wrong number of arguments (three arg), correct type"""
+>>> say_my_name(“Game”, “of”, “Thrones”)
+>>> say_my_name(“”, “of”, “Thrones”)
+>>> say_my_name(“Game”, “”, “Thrones”)
+>>> say_my_name(“Game”, “of”, “”)
+
+"""Test E: Check wrong types, (2 arg)"""
+"""Test E1: Check wrong types, (2 arg, bad LEFT side)"""
+“””Test E1_None”””
+>>> say_my_name(None, “Mouse”)
+“””Test E1_Int”””
+>>> say_my_name(35, “Mouse”)
+“””Test E1_Float”””
+>>> say_my_name(3.5, “Mouse”)
+“””Test E1_Tuple”””
+>>> say_my_name((), “Mouse”)
+>>> say_my_name((None), “Mouse”)
+>>> say_my_name((3), “Mouse”)
+>>> say_my_name((3,), “Mouse”)
+>>> say_my_name((,3), “Mouse”)
+>>> say_my_name((3, 55), “Mouse”)
+
+“””Test E1_List”””
+>>> say_my_name([], “Mouse”)
+>>> say_my_name([None], “Mouse”)
+>>> say_my_name([None,], “Mouse”)
+>>> say_my_name([,None], “Mouse”)
+>>> say_my_name([None, None], “Mouse”)
+>>> say_my_name([98], “Mouse”)
+>>> say_my_name([98, ,], “Mouse”)
+>>> say_my_name([, 101], “Mouse”)
+>>> say_my_name([98, 101], “Mouse”)
+
+“””Test E1_Set”””
+>>> say_my_name({}, “Mouse”)
+>>> say_my_name({None}, “Mouse”)
+>>> say_my_name({None,}, “Mouse”)
+>>> say_my_name({,None}, “Mouse”)
+>>> say_my_name({None, None}, “Mouse”)
+>>> say_my_name({98}, “Mouse”)
+>>> say_my_name({98, ,}, “Mouse”)
+>>> say_my_name({, 101}, “Mouse”)
+>>> say_my_name({98, 101}, “Mouse”)
+
+“””Test E1_Dict”””
+>>> say_my_name({}, “Mouse”)
+>>> say_my_name({‘None’: ’None’}, “Mouse”)
+>>> say_my_name({‘myKey’: ‘myVal’}, “Mouse”)
+>>> say_my_name({None : None}, “Mouse”)
+>>> say_my_name({‘myKey’: 8,}, “Mouse”)
+>>> say_my_name({‘myKey’: ‘z’, ,}, “Mouse”)
+>>> say_my_name({“qq”, 101}, “Mouse”)
+
+"""Test E2: Check wrong types, (2 arg, bad RIGHT side)"""
+“””Test E2_None”””
+>>> say_my_name(“Mouse”, None)
+“””Test E2_Int”””
+>>> say_my_name(“Mouse”, 35)
+“””Test E2_Float”””
+>>> say_my_name(“Mouse”, 3.5)
+“””Test E2_Tuple”””
+>>> say_my_name(“Mouse”, ())
+>>> say_my_name(“Mouse”, (None))
+>>> say_my_name(“Mouse”, (3))
+>>> say_my_name(“Mouse”, (3,))
+>>> say_my_name(“Mouse”, (,3))
+>>> say_my_name(“Mouse”, (3, 55))
+
+“””Test E2_List”””
+>>> say_my_name(“Mouse”, [])
+>>> say_my_name(“Mouse”, [None])
+>>> say_my_name(“Mouse”, [None,])
+>>> say_my_name(“Mouse”, [,None])
+>>> say_my_name(“Mouse”, [None, None])
+>>> say_my_name([98], “Mouse”)
+>>> say_my_name(“Mouse”, [98, ,])
+>>> say_my_name(“Mouse”, [, 101])
+>>> say_my_name(“Mouse”, [98, 101])
+
+“””Test E2_Set”””
+>>> say_my_name(“Mouse”, {})
+>>> say_my_name(“Mouse”, {None})
+>>> say_my_name(“Mouse”, {None,})
+>>> say_my_name(“Mouse”, {,None})
+>>> say_my_name(“Mouse”, {None, None})
+>>> say_my_name(“Mouse”, {98})
+>>> say_my_name(“Mouse”, {98, ,})
+>>> say_my_name(“Mouse”, {, 101})
+>>> say_my_name(“Mouse”, {98, 101})
+
+“””Test E2_Dict”””
+>>> say_my_name(“Mouse”, {})
+>>> say_my_name(“Mouse”, {‘None’: ’None’})
+>>> say_my_name(“Mouse”, {‘myKey’: ‘myVal’})
+>>> say_my_name(“Mouse”, {None : None})
+>>> say_my_name(“Mouse”, {‘myKey’: 8,})
+>>> say_my_name(“Mouse”, {‘myKey’: ‘z’, ,})
+>>> say_my_name(“Mouse”, {“qq”, 101})
+
+"""Test F: Check wrong number of arguments and wrong type"""
+>>> say_my_name(“Song”, “of”, “Ice”)
+>>> say_my_name(“Song”, “of”, 99)
+>>> say_my_name(8.8, “of”, “Ice”)
+>>> say_my_name(“Song”, None, “Ice”)
+>>> say_my_name(“Song”, (), “Ice”)
+>>> say_my_name({}, (), “Ice”)
+>>> say_my_name(“Song”, [], “Ice”)
+
+“””Test G: Part of original test case from 3-main.py”””
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+    >>> say_my_name("Bob", "")
+    My name is  
+
+    >>> try:
+    >>>     say_my_name("Bob", 12)
+    >>> except Exception as e:
+    >>>     print(e)
+    last_name must be a string
+
+

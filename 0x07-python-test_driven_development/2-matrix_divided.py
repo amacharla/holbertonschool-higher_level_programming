@@ -29,7 +29,10 @@ def matrix_divided(matrix, div):
         intchk = all(type(element) is int or type(element) is float
                      for listss in matrix for element in listss)
 
-    if not all((listchk, intchk, matrixchk)):
+    if matrixchk is False:
+        raise TypeError('matrix must be a matrix (list of lists) of\
+            integers/floats')
+    if listchk and intchk is False:
         raise TypeError('matrix must be a matrix (list of lists) of\
             integers/floats')
     if lenchk is False:

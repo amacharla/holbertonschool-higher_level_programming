@@ -1,0 +1,26 @@
+The ``matrix_divided(matrix, div)`` module
+==========================================
+
+Using ``matrix_divided`` func to divided every element by div argument.
+----------------------------
+
+	>>> md = __import__('2-matrix_divided').matrix_divided
+
+""" Working Scenarios """
+
+	>>> m = [[ 1, 2, 3], [ 4, 5, 6]]
+	>>> md(m, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+	
+	>>> m1 = [[ 1.2, 2, 3.4], [ 4, 5.6, 6]]
+	>>> md(m1, 3)
+	[[0.4, 0.67, 1.13], [1.33, 1.87, 2.0]]
+
+""" Test: Check Wrong Types"""
+
+	>>> m = ((1, 2, 3), (4, 5, 6))
+	>>> md(m, 3)	# doctest: +NORMALIZE_WHITESPACE
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of            integers/floats
+	
+	>>> m =
