@@ -59,7 +59,7 @@ class Rectangle:
             for w in range(self.__width):
                 __string += '#'
             __string += '\n'
-        return __string[:-1] #  avoid sending last newline character
+        return __string[:-1]  # avoid sending last newline character
 
     def __repr__(self):
         """ Returns: ClassName(arg1, arg2) """

@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 class Rectangle:
-    """ Sets width and height of Rectanle
+    """ Sets width and height of Rectangle
     Attributes:
         number_of_instances (int): counter of instances
+        print_symbol (str): modify symbol to print Rectangle
     """
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """ Initilizes and calls respective setter method
         Args:
             width: int > 0
             height: int > 0
+        Updates Instance counter
         """
         self.width, self.height = width, height
         type(self).number_of_instances += 1
@@ -53,7 +56,7 @@ class Rectangle:
 
     def __str__(self):
         """ String representation of Rectangle class.
-        Returns: str rectangle in '#' form else empty string.
+        Returns: str rectangle in @print_symbol form else empty string.
         """
         __string = ""
 
@@ -62,15 +65,16 @@ class Rectangle:
 
         for h in range(self.__height):
             for w in range(self.__width):
-                __string += '#'
+                __string += str(self.print_symbol)
             __string += '\n'
-        return __string[:-1] #  avoid sending last newline character
+        return __string[:-1]  # avoid sending last newline character
 
     def __repr__(self):
         """ Returns: ClassName(arg1, arg2) """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """ Prints goodbye message """
+        """ Prints goodbye message
+        Decrement Instance counter """
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
