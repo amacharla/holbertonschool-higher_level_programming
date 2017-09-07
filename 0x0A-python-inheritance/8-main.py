@@ -10,6 +10,7 @@ try:
     print("Rectangle: {} - {}".format(r.width, r.height))
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
+    print("E CLASS =", e.__class__)
 
 try:
     r2 = Rectangle(4, True)
