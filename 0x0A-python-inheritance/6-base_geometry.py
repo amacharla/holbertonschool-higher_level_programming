@@ -8,6 +8,6 @@ Module Contains:
 class BaseGeometry():
     """ Base Class with `area` method """
 
-    def area(self):
+    def area(self):  # place holder, subclass must have its own
         """ Raises: Exception when `area` is called """
         raise Exception("area() is not implemented")
