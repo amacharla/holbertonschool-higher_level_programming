@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module with method ``from_json_string`` """
 
+
 def save_to_json_file(my_obj, filename):
     """ Serializes object -> json file """
 
