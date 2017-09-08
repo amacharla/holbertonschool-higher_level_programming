@@ -9,9 +9,6 @@ Module Contains:
 class MyList(list):
     """ A class that that inherits from `list` """
 
-    def __init__(self):
-        super().__init__(self)
-
     def print_sorted(self):
         """ printed sorted list """
         print(sorted(self))
