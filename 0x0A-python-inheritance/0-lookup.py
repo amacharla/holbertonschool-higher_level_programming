@@ -9,4 +9,4 @@ Module Contains:
 def lookup(obj):
     """ Returns: all attributes of `obj` """
 
-    return list(obj.__dict__)
+    return dir(obj)
