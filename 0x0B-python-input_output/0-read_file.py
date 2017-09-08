@@ -7,5 +7,5 @@ def read_file(filename=""):
 
     assert (type(filename) is str), "Filename passed is not string"
 
-    with open(filename, encoding='utf-8') as a_file:
+    with open(filename, "r", encoding='utf-8') as a_file:
         print(a_file.read())

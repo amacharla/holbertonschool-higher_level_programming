@@ -7,7 +7,7 @@ def number_of_lines(filename=""):
 
     assert (type(filename) is str), "Filename passed is not string"
 
-    with open(filename, encoding='utf-8') as a_file:
+    with open(filename, "r", encoding='utf-8') as a_file:
         for lineNum, line in enumerate(a_file):
             pass
     return lineNum + 1  # accounts for index
