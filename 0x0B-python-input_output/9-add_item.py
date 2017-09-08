@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 
+from sys import argv
 save = __import__('7-save_to_json_file').save_to_json_file
 # def save_to_json_file(my_obj, filename)
 load = __import__('8-load_from_json_file').load_from_json_file
 # def load_from_json_file(filename)
 
-from sys import argv
 filename = "add_item.json"
-current_args = argv[1:]
+arguments = []
+
 try:
-    file_args = load(filename)
-    current_args += file_args
-except:
-    save(current_args, filename)
-    load(filename)
+    arguments = load(filename)
+except:  # if there is nothing to load
+    arguments = argv[1:]
+else:  # if there are previous arguments in file
+    arguments += argv[1:]
+# save arguments to file
+save(arguments, filename)

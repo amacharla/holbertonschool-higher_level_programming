@@ -8,4 +8,5 @@ def number_of_lines(filename=""):
     assert (type(filename) is str), "Filename passed is not string"
 
     with open(filename, "r", encoding='utf-8') as a_file:
+        # or return len(a_file.readlines())
         return sum(1 for line in a_file)  # sum(+1 for each line)
