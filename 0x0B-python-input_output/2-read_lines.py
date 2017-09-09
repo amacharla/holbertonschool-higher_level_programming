@@ -13,3 +13,7 @@ def read_lines(filename="", nb_lines=0):
         else:  # read individual lines
             [print(a_file.readline(), end='') for line_num in range(nb_lines)
                 if line_num != nb_lines]
+# for line in a_file:
+#   if nb == 0:
+#       break
+#   print(line, end='')
