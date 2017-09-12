@@ -1,4 +1,5 @@
-
+#!/usr/bin/python3
+""" Module with Rectangle class that inherates from Base """
 from models.base import Base
 
 
@@ -10,10 +11,7 @@ class Rectangle(Base):
 
         super().__init__(id)  # calls Base class and sets id according to rules
         #  class respective methods to set values
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.width, self.height, self.x, self.y = width, height, x, y
 
 # ------ Getters and Setters ---------
     @property
