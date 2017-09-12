@@ -50,3 +50,9 @@ class Base():
         with open("{}.json".format(cls.__name__), "w") as json_file:
             import json  # convert list of dict to json str and write to file
             json_file.write(cls.to_json_string(cls_list))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Create an instance of class with given arguments """
+
+        return cls(**dictionary)
