@@ -10,7 +10,10 @@ class Rectangle(Base):
 
         super().__init__(id)  # calls Base class and sets id according to rules
         #  class respective methods to set values
-        self.width, self.height, self.x, self.y = width, height, x, y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
 # ------ Getters and Setters ---------
     @property
