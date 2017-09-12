@@ -108,7 +108,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ Updates attributes in class Rectangle """
-        if kwargs is None:  # if kwargs not passed use args
+        if len(args):  # if kwargs not passed use args
             RecAttr = iter(['id', 'width', 'height', 'x', 'y'])  # for next()
             for idx, arg in enumerate(args):
                 try:  # argument validation
