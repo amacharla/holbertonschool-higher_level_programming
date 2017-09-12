@@ -29,11 +29,8 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """ Updates attributes in class Rectangle """
         if len(args):  # if args is passed
-            SaqAttr = iter(['size', 'x', 'y'])  # iter for next()
+            SaqAttr = iter(['id', 'size', 'x', 'y'])  # iter for next()
             for idx, arg in enumerate(args):
-                if idx == 0:  # handles id
-                    Base().__init__(arg)  # calls Bases Intit
-                    continue
                 try:  # argument validation
                     # calls respective setter method
                     setattr(self, next(SaqAttr), arg)
@@ -41,9 +38,6 @@ class Square(Rectangle):
                     print(error)
         else:  # if kwargs is passed
             for key, value in kwargs.items():
-                if key == id:  # handles id
-                    Base().__init__(key)  # calls Bases intit
-                    continue
                 if hasattr(self, key):  # key validation
                     try:  # argument validation
                         # calls respective setter method

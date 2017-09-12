@@ -93,7 +93,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        """ Print visual representation of Rectange according to position"""
+        """ Print visual rep of Rectange according to position"""
 
         [print() for y in range(self.__y)]  # Y position
         # X position then print
@@ -107,12 +107,9 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ Updates attributes in class Rectangle """
-        if len(args):  # if args is passed
-            RecAttr = iter(['width', 'height', 'x', 'y'])  # iter for next()
+        if kwargs is None:  # if kwargs not passed use args
+            RecAttr = iter(['id', 'width', 'height', 'x', 'y'])  # for next()
             for idx, arg in enumerate(args):
-                if idx == 0:  # handles id
-                    super().__init__(arg)  # calls Bases Intit
-                    continue
                 try:  # argument validation
                     # calls respective setter method
                     setattr(self, next(RecAttr), arg)
@@ -120,9 +117,6 @@ class Rectangle(Base):
                     print(error)
         else:  # if kwargs is passed
             for key, value in kwargs.items():
-                if key == id:  # handles id
-                    super().__init__(key)  # calls Bases intit
-                    continue
                 if hasattr(self, key):  # key validation
                     try:  # argument validation
                         # calls respective setter method
