@@ -1,0 +1,70 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Base	models/base.py	/^class Base():$/;"	c
+Rectangle	models/rectangle.py	/^class Rectangle(Base):$/;"	c
+__init__	models/base.py	/^    def __init__(self, id=None):$/;"	m	class:Base
+__init__	models/rectangle.py	/^    def __init__(self, width, height, x=0, y=0, id=None):$/;"	m	class:Rectangle
+__nb_objects	models/base.py	/^    __nb_objects = 0$/;"	v	class:Base
+area	models/rectangle.py	/^    def area(self):$/;"	m	class:Rectangle
+b1	0-main.py	/^    b1 = Base()$/;"	v
+b2	0-main.py	/^    b2 = Base()$/;"	v
+b3	0-main.py	/^    b3 = Base()$/;"	v
+b4	0-main.py	/^    b4 = Base(12)$/;"	v
+b5	0-main.py	/^    b5 = Base()$/;"	v
+dictionary	14-main.py	/^    dictionary = r1.to_dictionary()$/;"	v
+height	models/rectangle.py	/^    def height(self):$/;"	m	class:Rectangle
+height	models/rectangle.py	/^    def height(self, height):$/;"	m	class:Rectangle
+json_dictionary	14-main.py	/^    json_dictionary = Base.to_json_string([dictionary])$/;"	v
+json_list_input	16-main.py	/^    json_list_input = Rectangle.to_json_string(list_input)$/;"	v
+list_input	16-main.py	/^    list_input = [$/;"	v
+list_output	16-main.py	/^    list_output = Rectangle.from_json_string(json_list_input)$/;"	v
+list_rectangles_input	18-main.py	/^    list_rectangles_input = [r1, r2]$/;"	v
+list_rectangles_output	18-main.py	/^    list_rectangles_output = Rectangle.load_from_file()$/;"	v
+list_squares_input	18-main.py	/^    list_squares_input = [s1, s2]$/;"	v
+list_squares_output	18-main.py	/^    list_squares_output = Square.load_from_file()$/;"	v
+r	2-main.py	/^        r = Rectangle(10, 2)$/;"	v
+r1	1-main.py	/^    r1 = Rectangle(10, 2)$/;"	v
+r1	12-main.py	/^    r1 = Rectangle(10, 2, 1, 9)$/;"	v
+r1	14-main.py	/^    r1 = Rectangle(10, 7, 2, 8)$/;"	v
+r1	15-main.py	/^    r1 = Rectangle(10, 7, 2, 8)$/;"	v
+r1	17-main.py	/^    r1 = Rectangle(3, 5, 1)$/;"	v
+r1	18-main.py	/^    r1 = Rectangle(10, 7, 2, 8)$/;"	v
+r1	3-main.py	/^    r1 = Rectangle(3, 2)$/;"	v
+r1	4-main.py	/^    r1 = Rectangle(2, 2)$/;"	v
+r1	4-main.py	/^    r1 = Rectangle(4, 6)$/;"	v
+r1	5-main.py	/^    r1 = Rectangle(4, 6, 2, 1, 12)$/;"	v
+r1	6-main.py	/^    r1 = Rectangle(2, 3, 2, 2)$/;"	v
+r1	7-main.py	/^    r1 = Rectangle(10, 10, 10, 10)$/;"	v
+r1	8-main.py	/^    r1 = Rectangle(10, 10, 10, 10)$/;"	v
+r1_dictionary	12-main.py	/^    r1_dictionary = r1.to_dictionary()$/;"	v
+r1_dictionary	17-main.py	/^    r1_dictionary = r1.to_dictionary()$/;"	v
+r2	1-main.py	/^    r2 = Rectangle(2, 10)$/;"	v
+r2	12-main.py	/^    r2 = Rectangle(1, 1)$/;"	v
+r2	15-main.py	/^    r2 = Rectangle(2, 4)$/;"	v
+r2	17-main.py	/^    r2 = Rectangle.create(**r1_dictionary)$/;"	v
+r2	18-main.py	/^    r2 = Rectangle(2, 4)$/;"	v
+r2	3-main.py	/^    r2 = Rectangle(2, 10)$/;"	v
+r2	5-main.py	/^    r2 = Rectangle(5, 5, 1)$/;"	v
+r2	6-main.py	/^    r2 = Rectangle(3, 2, 1, 0)$/;"	v
+r3	1-main.py	/^    r3 = Rectangle(10, 2, 0, 0, 12)$/;"	v
+r3	3-main.py	/^    r3 = Rectangle(8, 7, 0, 0, 12)$/;"	v
+s1	10-main.py	/^    s1 = Square(5)$/;"	v
+s1	11-main.py	/^    s1 = Square(5)$/;"	v
+s1	13-main.py	/^    s1 = Square(10, 2, 1)$/;"	v
+s1	18-main.py	/^    s1 = Square(5)$/;"	v
+s1	9-main.py	/^    s1 = Square(5)$/;"	v
+s1_dictionary	13-main.py	/^    s1_dictionary = s1.to_dictionary()$/;"	v
+s2	13-main.py	/^    s2 = Square(1, 1)$/;"	v
+s2	18-main.py	/^    s2 = Square(7, 9, 1)$/;"	v
+s2	9-main.py	/^    s2 = Square(2, 2)$/;"	v
+s3	9-main.py	/^    s3 = Square(3, 1, 3)$/;"	v
+width	models/rectangle.py	/^    def width(self):$/;"	m	class:Rectangle
+width	models/rectangle.py	/^    def width(self, width):$/;"	m	class:Rectangle
+x	models/rectangle.py	/^    def x(self):$/;"	m	class:Rectangle
+x	models/rectangle.py	/^    def x(self, x):$/;"	m	class:Rectangle
+y	models/rectangle.py	/^    def y(self):$/;"	m	class:Rectangle
+y	models/rectangle.py	/^    def y(self, y):$/;"	m	class:Rectangle
