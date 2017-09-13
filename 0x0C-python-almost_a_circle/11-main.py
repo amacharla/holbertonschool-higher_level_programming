@@ -22,7 +22,7 @@ if __name__ == "__main__":
     s1.update(x=12)
     print(s1)
 
-    s1.update(size=7, y=1)
+    s1.update(5, size=7, y=1)
     print(s1)
 
     s1.update(size=7, id=89, y=1)
