@@ -12,7 +12,7 @@ class Base():
 
         if id is None:  # increment instance and assign if id not passed
             type(self).__nb_objects += 1
-            type(self).id = type(self).__nb_objects
+            self.id = type(self).__nb_objects
         else:  # if id is passed then assign it to id
             self.id = id
 
@@ -53,6 +53,26 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
-        """ Create an instance of class with given arguments """
+        """
+        Create an instance of class with given arguments
+        Uses update() instead of because if class doesnt contain required
+        arguments it wont spit out an error and return a proper object
 
-        return cls(**dictionary)
+        Returns: instance of class with `dictionary` attributes
+        """
+        dummy = cls(5, 5, 5, 5)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns: list of instances """
+
+        try:  # if opening file fails or json str is empty and fails
+            with open("{}.json".format(cls.__name__), "r") as json_file:
+                # read file and convert json string -> list of dict
+                clsdict = cls.from_json_string(json_file.read())
+        except:  # if no file exist or json file is empty return empty list
+            return []
+        else:  # send cls.dict from list of dict and create instance
+            return [cls.create(**attr) for attr in clsdict]
