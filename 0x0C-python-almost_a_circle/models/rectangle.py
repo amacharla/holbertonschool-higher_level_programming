@@ -103,8 +103,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Returns: [Rectangle] (id) x/y - width/height """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({0.id}) {0.x}/{0.y} - {0.width}/{0.height}"\
+            .format(self)
 
     def update(self, *args, **kwargs):
         """ Updates attributes in class Rectangle """

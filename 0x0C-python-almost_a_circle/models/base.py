@@ -21,7 +21,7 @@ class Base():
         """ Returns: list of dicts -> json str """
 
         l_d = list_dictionaries
-        if type(l_d) is not list or len(l_d[0]) == 0 or l_d is None:
+        if l_d is None:
             return "[]"
         import json
         return json.dumps(l_d)
@@ -30,7 +30,7 @@ class Base():
     def from_json_string(json_string):
         """ Returns: list <- json str """
 
-        if len(json_string) == 0 or type(json_string) is not str:
+        if len(json_string) == 0 or json_string is None:
             return []
         import json
         return json.loads(json_string)
@@ -45,7 +45,7 @@ class Base():
             cls_list = [{attr: getattr(inst, attr) for attr in clsAttr
                         if hasattr(inst, attr)} for inst in list_objs]
         else:
-            cls_list = [{}]  # writing to file an empty list
+            cls_list = []  # writing to file an empty list
 
         with open("{}.json".format(cls.__name__), "w") as json_file:
             import json  # convert list of dict to json str and write to file
@@ -60,7 +60,7 @@ class Base():
 
         Returns: instance of class with `dictionary` attributes
         """
-        dummy = cls(5, 5, 5, 5)
+        dummy = cls(5, 5)
         dummy.update(**dictionary)
         return dummy
 
