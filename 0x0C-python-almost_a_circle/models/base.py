@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Module with ``Base`` Class """
+import json
 
 
 class Base():
@@ -11,8 +12,8 @@ class Base():
         """ Initilizing Instance Counter """
 
         if id is None:  # increment instance and assign if id not passed
-            type(self).__nb_objects += 1
-            self.id = type(self).__nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
         else:  # if id is passed then assign it to id
             self.id = id
 
@@ -23,7 +24,6 @@ class Base():
         l_d = list_dictionaries
         if l_d is None:
             return "[]"
-        import json
         return json.dumps(l_d)
 
     @staticmethod
@@ -31,24 +31,20 @@ class Base():
         """ Returns: list <- json str """
 
         if len(json_string) == 0 or json_string is None:
-            return []
-        import json
+            return []  # if json_string is empty
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """ Save instances attributes as dict -> json str -> json file """
 
-        if list_objs is not None:
-            clsAttr = ['id', 'width', 'height', 'size', 'x', 'y']  # get attr
-            # get attr and convert them to dict and place them in list
-            cls_list = [{attr: getattr(inst, attr) for attr in clsAttr
-                        if hasattr(inst, attr)} for inst in list_objs]
-        else:
-            cls_list = []  # writing to file an empty list
+        cls_list = []
 
+        if list_objs is not None:
+            # get attr and convert them to dict and place them in list
+                [cls_list.append(obj.to_dictionary()) for obj in list_objs]
         with open("{}.json".format(cls.__name__), "w") as json_file:
-            import json  # convert list of dict to json str and write to file
+            # convert list of dict to json str and write to file
             json_file.write(cls.to_json_string(cls_list))
 
     @classmethod
@@ -60,7 +56,7 @@ class Base():
 
         Returns: instance of class with `dictionary` attributes
         """
-        dummy = cls(5, 5)
+        dummy = cls(5, 5) if cls.__name__ is "Rectangle" else cls(5)
         dummy.update(**dictionary)
         return dummy
 

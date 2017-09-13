@@ -108,22 +108,15 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ Updates attributes in class Rectangle """
-        if len(args):  # if kwargs not passed use args
+        if args:  # if kwargs not passed use args
             RecAttr = iter(['id', 'width', 'height', 'x', 'y'])  # for next()
-            for idx, arg in enumerate(args):
-                try:  # argument validation
-                    # calls respective setter method
-                    setattr(self, next(RecAttr), arg)
-                except Exception as error:  # setter error msg
-                    print(error)
-        else:  # if kwargs is passed
+            # calls respective setter method
+            [setattr(self, next(RecAttr), arg) for arg in args]
+        if kwargs:  # if kwargs is passed
             for key, value in kwargs.items():
                 if hasattr(self, key):  # key validation
-                    try:  # argument validation
-                        # calls respective setter method
-                        setattr(self, key, value)
-                    except Exception as error:  # setter error msg
-                        print(error)
+                    # calls respective setter method
+                    setattr(self, key, value)
                 else:  # if key doesnt exist dont create attribute
                     continue
 

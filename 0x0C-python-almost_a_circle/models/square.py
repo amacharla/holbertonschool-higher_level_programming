@@ -27,23 +27,16 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """ Updates attributes in class Rectangle """
-        if len(args):  # if args is passed
+        """ Updates attributes in class Square"""
+        if args:  # if args is passed
             SaqAttr = iter(['id', 'size', 'x', 'y'])  # iter for next()
-            for idx, arg in enumerate(args):
-                try:  # argument validation
-                    # calls respective setter method
-                    setattr(self, next(SaqAttr), arg)
-                except Exception as error:  # setter error msg
-                    print(error)
-        else:  # if kwargs is passed
+            # calls respective setter method
+            [setattr(self, next(SaqAttr), arg) for arg in args]
+        if kwargs:  # if kwargs is passed
             for key, value in kwargs.items():
                 if hasattr(self, key):  # key validation
-                    try:  # argument validation
-                        # calls respective setter method
-                        setattr(self, key, value)
-                    except Exception as error:  # setter error msg
-                        print(error)
+                    # calls respective setter method
+                    setattr(self, key, value)
                 else:  # if key doesnt exist dont create attribute
                     continue
 
