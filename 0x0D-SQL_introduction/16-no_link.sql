@@ -1,3 +1,3 @@
 --script that lists all records of the table second_table with cretria
 
-SELECT `score`, `name` FROM `second_table` HAVING `name` ORDER BY `score` DESC;
+SELECT `score`, `name` FROM `second_table` HAVING !`name` ORDER BY `score` DESC;
