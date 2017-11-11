@@ -17,5 +17,5 @@ if __name__ == "__main__":
 
     # find row with id 2
     row = session.query(State).filter(State.id == 2).first()
-    row.name = "New Mexico" # update name
-    session.commit() # push chances into database
+    row.name = "New Mexico"  # update name
+    session.commit()  # push chances into database

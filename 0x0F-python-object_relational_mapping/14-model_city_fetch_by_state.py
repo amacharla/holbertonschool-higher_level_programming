@@ -10,8 +10,8 @@ if __name__ == "__main__":
 
     # open a connection
     engine = create_engine('mysql+mysqldb://'
-                           '{0.argv[1]}:{0.argv[2]}@localhost/{0.argv[3]}'
-                           .format(sys))
+                            '{0.argv[1]}:{0.argv[2]}@localhost/{0.argv[3]}'
+                            .format(sys))
     # use connection
     Session = sessionmaker(bind=engine)
     session = Session()  # session instance
