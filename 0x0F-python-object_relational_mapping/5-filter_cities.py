@@ -4,7 +4,8 @@ script that takes in the name of a state as an argument and lists all cities of 
 """
 
 if __name__ == "__main__":
-    import MySQLdb, sys
+    import MySQLdb
+    import sys
 
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     cur = db.cursor()
