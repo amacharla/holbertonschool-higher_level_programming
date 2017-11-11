@@ -19,5 +19,5 @@ if __name__ == "__main__":
     first = session.query(State).order_by(State.id).first()
     if first is not None:
         print("{0.id}: {0.name}".format(first))
-    else: # if no table: states exist
+    else:  # if no table: states exist
         print("Nothing")

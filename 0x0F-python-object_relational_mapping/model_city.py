@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base  # base constructor
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
-from sqlalchemy import ForeignKey # new attr
+from sqlalchemy import ForeignKey  # new attr
 
 # construct `Base` from sqlalchemy
 Base = declarative_base()

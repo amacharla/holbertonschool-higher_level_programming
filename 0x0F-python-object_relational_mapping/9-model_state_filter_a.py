@@ -17,5 +17,5 @@ if __name__ == "__main__":
 
     # get all names with `a` in them
     for state in session.query(State).filter(State.name.like('%a%')
-            ).order_by(State.id):
+                ).order_by(State.id):
         print("{0.id}: {0.name}".format(state))
