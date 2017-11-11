@@ -14,7 +14,7 @@ if __name__ == "__main__":
                            .format(sys))
     # use connection
     Session = sessionmaker(bind=engine)
-    session = Session() # session instance
+    session = Session()  # session instance
 
     # using join to retrieve city and state
     for city, state in session.query(City, State.name).join(State,

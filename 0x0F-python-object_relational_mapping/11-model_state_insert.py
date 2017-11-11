@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            .format(sys))
     # use connection
     Session = sessionmaker(bind=engine)
-    session = Session() # session instance
+    session = Session()  # session instance
 
     row = State(name='Louisiana')
     session.add(row)

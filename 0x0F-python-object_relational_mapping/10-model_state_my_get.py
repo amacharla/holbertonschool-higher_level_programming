@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            .format(sys))
     # use connection
     Session = sessionmaker(bind=engine)
-    session = Session() # session instance
+    session = Session()  # session instance
 
     # retrieve only one withe the `first()`
     name = session.query(State).order_by(State.id).first()

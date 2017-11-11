@@ -10,6 +10,7 @@ from sqlalchemy import ForeignKey # new attr
 # construct `Base` from sqlalchemy
 Base = declarative_base()
 
+
 class City(Base):
     """ Creating a Table for 'cities' """
     __tablename__ = 'cities'  # name of table

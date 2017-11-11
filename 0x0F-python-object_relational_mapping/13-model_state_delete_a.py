@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            .format(sys))
     # use connection
     Session = sessionmaker(bind=engine)
-    session = Session() # session instance
+    session = Session()  # session instance
 
     # get all names with `a` in them
     for state_row in session.query(State).filter(State.name.like('%a%')):

@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            .format(sys))
     # use connection
     Session = sessionmaker(bind=engine)
-    session = Session() # session instance
+    session = Session()  # session instance
 
     # retrieve only one withe the `first()`
     first = session.query(State).order_by(State.id).first()
@@ -21,4 +21,3 @@ if __name__ == "__main__":
         print("{0.id}: {0.name}".format(first))
     else: # if no table: states exist
         print("Nothing")
-

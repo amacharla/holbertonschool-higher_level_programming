@@ -1,13 +1,12 @@
 #!usr/bin/python3
-""" Module with SQLAlchemy """
+"""Module with SQLAlchemy"""
 
 from sqlalchemy.ext.declarative import declarative_base  # base constructor
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
+from sqlalchemy import Column, Integer, String
 
 # construct `Base` from sqlalchemy
 Base = declarative_base()
+
 
 class State(Base):
     """ Creating a Table for 'states' """
