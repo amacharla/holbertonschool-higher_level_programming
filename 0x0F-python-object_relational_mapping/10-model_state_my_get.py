@@ -16,8 +16,10 @@ if __name__ == "__main__":
     session = Session()  # session instance
 
     # retrieve only one withe the `first()`
-    name = session.query(State).order_by(State.id).first()
-    if name is not None:
-        print("{0.id}: {0.name}".format(first))
-    else:  # if no table: states exist
-        print("Nothing")
+    state_name = sys.argv[4]
+    try:
+        state = session.query(State).filter(State.name == sys.argv[4]).one()
+    except Exception:
+        print("Not found")
+    else:
+        print(state.id)
