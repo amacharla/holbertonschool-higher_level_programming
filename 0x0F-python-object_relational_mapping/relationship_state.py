@@ -3,6 +3,7 @@
 
 from sqlalchemy.ext.declarative import declarative_base  # base constructor
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
 # construct `Base` from sqlalchemy
 Base = declarative_base()
@@ -15,3 +16,5 @@ class State(Base):
     # column name = column attr
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
+
+    cities = relationship("City", backref="state")
