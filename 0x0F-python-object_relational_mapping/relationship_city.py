@@ -7,6 +7,7 @@ from sqlalchemy import String
 from sqlalchemy import ForeignKey  # new attr
 from relationship_state import Base
 
+
 class City(Base):
     """ Creating a Table for 'cities' """
     __tablename__ = 'cities'  # name of table

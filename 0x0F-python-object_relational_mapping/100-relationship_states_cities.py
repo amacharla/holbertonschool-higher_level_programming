@@ -17,12 +17,12 @@ if __name__ == "__main__":
                            .format(sys))
 
     # update tables before adding attr
-    #Base.metadata.create_all(engine)
+    Base.metadata.create_all(engine)
     # use connection
     Session = sessionmaker(bind=engine)
     session = Session()  # session instance
 
     ca = State(name='California')
-    ca.cities= [City(name='San Francisco')]  # needs to be in list to add attr
+    ca.cities = [City(name='San Francisco')]  # needs to be in list to add attr
     session.add(ca)
     session.commit()  # have to add it to sql in order to retrive autogen id
