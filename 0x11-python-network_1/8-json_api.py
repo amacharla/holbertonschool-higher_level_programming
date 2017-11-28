@@ -9,7 +9,7 @@ if __name__ == "__main__":
     from sys import argv
     import requests
 
-    letter = argv[1][0] if len(argv) > 1 else ""
+    letter = argv[1][0] if len(argv) > 0 else ""
 
     res = requests.post('http://0.0.0.0:5000/search_user', data={'q': letter})
     try:
