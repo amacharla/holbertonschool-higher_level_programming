@@ -10,4 +10,4 @@ print("Body response:"
       "\n\t- type: ", type(page),
       "\n\t- content: ", page,
       "\n\t- utf8 content: ", page.decode("utf-8"),
-      "\n\t", sep="", end="")
+      "\n", sep="", end="")
