@@ -15,6 +15,6 @@ if __name__ == "__main__":
     try:
         rjson = res.json()
         json = "[{}] {}".format(rjson.get('id'), rjson.get('name'))
-        print(json if rjson else "No Result")
+        print(json if len(rjson) != 0 else "No Result")
     except ValueError as e:
         print("Not a valid JSON")
