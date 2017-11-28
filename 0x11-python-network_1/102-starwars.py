@@ -20,14 +20,13 @@ if __name__ == "__main__":
     print("Number of results:", rjson.get('count'))
 
     while rjson.get('next'):
-        nextp = rjson.get('next')
         for character in rjson.get('results'):
             print(character.get('name'))
             for film in character.get('films'):
                 title = requests.get(film).json().get('title')
-                print("/t", title)
-        res = requests.get(nextp)
-        rjson = res.json()
+                print("\t" + title)
+        nextp = rjson.get('next')
+        rjson = requests.get(nextp).json()
 
     for character in rjson.get('results'):
         print(character.get('name'))
