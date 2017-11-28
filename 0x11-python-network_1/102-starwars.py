@@ -6,8 +6,8 @@ convert JSON -> dict
 print count then iter through list of dicts of results
 print name
 https://swapi.co/api/people/?search=r2
-+AUTOMATICALLY GETS TO NEXT PAGE OF RESULTS
-+RETURN THE FILMS AS WELL
+AUTOMATICALLY GETS TO NEXT PAGE OF RESULTS
+RETURN THE FILMS AS WELL
 """
 
 if __name__ == "__main__":
