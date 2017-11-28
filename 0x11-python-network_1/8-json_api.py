@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     letter = argv[1][0] if len(argv) > 1 else ""
 
-    res = requests.post('http://0.0.0.0:5000/search_user', data = {'q': letter})
+    res = requests.post('http://0.0.0.0:5000/search_user', data={'q': letter})
     try:
         rjson = res.json()
         json = "[{}] {}".format(rjson.get('id'), rjson.get('name'))

@@ -1,18 +1,20 @@
 #!/usr/bin/python3
 """
 Takes string
-Makes a POST request to STAR WARS People API
-prints in resonse JSON format
+Makes a GET request to STAR WARS People API
+convert JSON -> dict
+print count then iter through list of dicts of results
+print name
+https://swapi.co/api/people/?search=r2
 """
 
 if __name__ == "__main__":
     from sys import argv
     import requests
 
-    res = requests.post('https://swapi.co/api/people/', data = {'search': argv[1]})
-    try:
-        rjson = res.json()
-        json = "[{}] {}".format(rjson.get('id'), rjson.get('name'))
-        print(json if rjson else "No Result")
-    except ValueError as e:
-        print("Not a valid JSON")
+    res = requests.get('https://swapi.co/api/people/',
+                       params={'search': argv[1]})
+    rjson = res.json()
+    print("Number of results:", rjson.get('count'))
+    for character in rjson.get('results'):
+        print(character.get('name'))
