@@ -3,7 +3,7 @@
 make a request to github api
 takes two arguments: username and repo
 convert JSON -> dict
-print recent 10 commits (thanks to `since` parameter)
+print recent 10 commits
 """
 
 if __name__ == "__main__":
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     import requests
 
     url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[2], argv[1])
-    res = requests.get(url, params={'since': '2017-11-27T01:00:49Z'})
+    res = requests.get(url)
     rjson = res.json()
     for commit in rjson[:10]:
         sha = commit.get('sha')
