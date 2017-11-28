@@ -10,7 +10,7 @@ if __name__ == "__main__":
     from sys import argv
     import requests
 
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[1], argv[2])
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(argv[2], argv[1])
     res = requests.get(url, params={'since': '2017-11-27T01:00:49Z'})
     rjson = res.json()
     for commit in rjson[:10]:
