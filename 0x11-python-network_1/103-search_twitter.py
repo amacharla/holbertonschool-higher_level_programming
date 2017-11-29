@@ -26,16 +26,11 @@ if __name__ == "__main__":
     def get_search(query, bearer):
         """ Makes a search query """
 
+        url = 'https://api.twitter.com/1.1/search/tweets.json'
         parameters = {'q': query, 'count': 5, 'result_type': 'recent'}
         header = {'Authorization': bearer}
-        results = requests.get('https://api.twitter.com/1.1/search/tweets.\
-                                json', params=parameters, headers=header)
-
-        if results.ok:
-            results = results.json()
-            if len(results.get('statuses')) > 0:
-                return results
-        raise ValueError('Invalid Query')
+        results = requests.get(url, params=parameters, headers=header).json()
+        return results
 
     def print_nice(results):
         """ Print [<UserId>] <UserText> <UserName> """
