@@ -16,5 +16,7 @@ const options = {
 
 request(options, (err, res, body) => {
   if (err) { return console.log(err); }
-  console.log(body.films.length);
+  let count = 0;
+  body.results.map(film => film.characters.map(charc => charc.endsWith('/18/') && count++));
+  console.log(count);
 });
