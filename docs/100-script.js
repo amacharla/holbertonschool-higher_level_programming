@@ -1,3 +1,3 @@
-$(window).bind('load', function () {
+$(function () {
   document.querySelector('header').style.color = 'red';
 });
