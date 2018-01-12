@@ -1,8 +1,7 @@
 $(function () {
   const url = 'https://query.yahooapis.com/v1/public/yql?';
-  const name = $('INPUT#city_search').val();
   const data = {
-    q: 'select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + name + '")',
+    q: 'select wind from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + $('INPUT#city_search').val() + '")',
     format: 'json'
   };
 
