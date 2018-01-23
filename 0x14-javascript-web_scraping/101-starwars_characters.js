@@ -14,3 +14,12 @@ const options = {
   json: true
 };
 
+request(options, (err, res, body) => {
+  if (err) { return console.log(err); }
+  body.characters.map(person => {
+    request(person, {json: true}, (err, res, body) => {
+      if (err) { return console.log(err); }
+      console.log(body['name']);
+    });
+  });
+});
